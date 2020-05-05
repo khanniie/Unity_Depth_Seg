@@ -64,10 +64,18 @@
 
             fixed4 frag (v2f i) : SV_Target
             {
-                //fixed4 col = tex2D(_MainTex, i.uv);
+                // get segmentation buffer
                 fixed4 stencil = tex2D(_StencilTex, GetStencilUV(i.uv));
+                
+                // get depth value
                 fixed4 depth = tex2D(_DepthTex, GetStencilUV(i.uv));
-                float d = 0.1 + 0.9*(1 - clamp(depth.r, 0, 1));
+
+                // depth values represent meters from camera
+                // we clamp this to between 0 to 1, 
+                // then we make sure the value is at least 0.1 so the hand shows up 
+                float d = 0.1 + 0.9 * (1 - clamp(depth.r, 0, 1));
+
+                //combine segmentation and modified depth
                 float r = stencil.r * d;
                 return float4(r, r, r, 1);
             }

@@ -15,10 +15,14 @@ public class PostEffect : MonoBehaviour
 
     void OnRenderImage(RenderTexture source, RenderTexture destination)
     {
+        // if we have an occlusion manager, we set the depth texture 
+        // and the segmentation buffer (stencil) into our new material
         if(occlusionManager!=null){
             _material.SetTexture("_StencilTex",occlusionManager.humanStencilTexture);
             _material.SetTexture("_DepthTex",occlusionManager.humanDepthTexture);     
         }
+
+        //send to be rendered
         Graphics.Blit(source, destination, _material);
     }
 

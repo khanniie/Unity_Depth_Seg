@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/MEISAI/scene/StencilSample.unity
+    path: Assets/DepthAssets/scene/DepthScene.unity
     guid: 6d0067b0f9e334fa291e081443105518
   m_configObjects:
     com.unity.xr.arkit.PlayerSettings: {fileID: 11400000, guid: 2d5fb8e61571b4e3897f221189089fd6,
