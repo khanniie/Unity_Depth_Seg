@@ -16,7 +16,7 @@ Segmentation buffer combined with depth buffer, colors converted to greyscale wi
 ## Settings for AR frame resolution
 You can set the resolution settings for the segmentation under the AR Session Origin element:
 
-![sample](readme_assets/unity_settings.PNG)
+![sample](readme_assets/unity_settings.png)
 
 ## Relevant Files
 - [PostEffect.cs](https://github.com/khanniie/Unity_Depth_Seg/blob/master/unity-project/Assets/DepthAssets/script/PostEffect.cs): Grabs the buffers from the AR Occlusion Manager and sends them to the shader
@@ -42,7 +42,7 @@ return float4(r, r, r, 1);
 ## Sending to Xcode
 It's suggested that you fill out the settings in Player Settings -> Identification. For the signing team id, follow the instructions here (the last answer at the bottom is the one that worked for me), in order to be able to "Build and Run" the project, which speeds up the produciton process.
 
-![sample](readme_assets/teamid.PNG)
+![sample](readme_assets/teamid.png)
 
 ### Licence
 
